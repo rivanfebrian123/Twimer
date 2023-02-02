@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.10.3 -->
+<interface>
+  <!-- interface-name window.ui -->
+  <requires lib="gtk" version="4.6"/>
+  <requires lib="libadwaita" version="1.1"/>
+  <template class="TwimerWindow" parent="AdwApplicationWindow">
+    <property name="default-height">1</property>
+    <property name="default-width">1</property>
+    <property name="height-request">460</property>
+    <property name="width-request">340</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <property name="centering-policy">strict</property>
+            <property name="title-widget">title</property>
+            <child>
+              <object class="GtkLabel" id="title"/>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="stack">
+            <property name="transition-duration">500</property>
+            <property name="transition-type">slide-left-right</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkBox" id="budi">
+                <property name="margin-bottom">40</property>
+                <property name="margin-end">40</property>
+                <property name="margin-start">40</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">30</property>
+                <property name="valign">center</property>
+                <child>
+                  <object class="GtkImage" id="loco">
+                    <property name="icon-name">gnome-color-manager</property>
+                    <property name="pixel-size">100</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSearchEntry" id="aha">
+                    <property name="halign">center</property>
+                    <property name="placeholder-text">Topik apa yang mau dianalisis?</property>
+                    <signal name="changed" handler="on_ngetik"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="elu">
+                    <property name="css-classes">suggested-action</property>
+                    <property name="halign">center</property>
+                    <property name="label">Analisis</property>
+                    <property name="sensitive">False</property>
+                    <signal name="clicked" handler="on_analisis"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="ani">
+                <property name="margin-bottom">40</property>
+                <property name="margin-end">40</property>
+                <property name="margin-start">40</property>
+                <property name="margin-top">20</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">30</property>
+                <child>
+                  <object class="GtkScrolledWindow" id="snow">
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="propagate-natural-height">True</property>
+                    <property name="vscrollbar-policy">always</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox" id="bibi">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">40</property>
+                            <property name="vexpand">True</property>
+                            <child>
+                              <object class="GtkImage" id="tono">
+                                <property name="height-request">250</property>
+                                <property name="hexpand">True</property>
+                                <property name="icon-name">image-missing</property>
+                                <property name="margin-top">25</property>
+                                <property name="pixel-size">100</property>
+                                <property name="width-request">250</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="hexpand">True</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <object class="AdwViewSwitcher">
+                                    <property name="stack">ff</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="AdwViewStack" id="ff">
+                                    <property name="height-request">250</property>
+                                    <property name="margin-bottom">20</property>
+                                    <property name="margin-top">20</property>
+                                    <property name="vexpand">True</property>
+                                    <property name="width-request">250</property>
+                                    <child>
+                                      <object class="AdwViewStackPage">
+                                        <property name="child">
+                                          <object class="GtkImage" id="posy">
+                                            <property name="icon-name">image-missing</property>
+                                            <property name="pixel-size">100</property>
+                                          </object>
+                                        </property>
+                                        <property name="icon-name">list-add-symbolic</property>
+                                        <property name="title">Positif</property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="AdwViewStackPage">
+                                        <property name="child">
+                                          <object class="GtkImage" id="negy">
+                                            <property name="icon-name">image-missing</property>
+                                            <property name="pixel-size">100</property>
+                                          </object>
+                                        </property>
+                                        <property name="icon-name">list-remove-symbolic</property>
+                                        <property name="title">Negatif</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="css-classes">suggested-action</property>
+                    <property name="halign">center</property>
+                    <property name="label">Buat Analisis Baru</property>
+                    <signal name="clicked" handler="on_buat_baru"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

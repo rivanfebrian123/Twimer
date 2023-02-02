@@ -1,0 +1,12 @@
+headerbar{
+  background-color: transparent;
+  box-shadow: none;
+}
+
+@keyframes spin {
+  to {transform: rotate(1turn);}
+}
+
+.muter {
+  animation: spin 1.35s linear infinite;
+}
